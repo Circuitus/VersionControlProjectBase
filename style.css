@@ -1,8 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     padding: 0;
     margin: 0;
     background: #EBEBEB;
-    
+
 }
 
 .navbar {
@@ -44,10 +48,11 @@ body {
 }
 
 .description {
-    text-align: center;  
+    text-align: center;
     position: relative;
-    /*transform: translate(-50%, -55%)*/;
-    }
+    /*transform: translate(-50%, -55%)*/
+    ;
+}
 
 .description h1 {
     color: #000;
@@ -60,52 +65,85 @@ body {
 }
 
 .description button {
-    border:1px solid black;
-    background:#1f2833;
+    border: 1px solid black;
+    background: #1f2833;
     border-radius: 0;
-    color:#efecec;
+    color: #efecec;
 }
 
 .description button:hover {
-    border:1px solid #e6e5e5;
-    background:#dddada;
-    color:#1c1c1c;
+    border: 1px solid #e6e5e5;
+    background: #dddada;
+    color: #1c1c1c;
+    margin-top: 20px;
+}
+
+.login-box {
+    width: 80%;
+    position: absolute;
+    margin-top: auto;
+    background-color: white;
+    top: 50%;
+    -ms-transform: translate(12.5%, -50%);
+    transform: translate(12.5%, -50%);
+    border-radius: 25px;
 }
 
 .logo {
-  height: 30px;
+    height: 30px;
 }
 
-* {
-  box-sizing: border-box;
+.double-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 .pageBody {
-  background-color: rgba(30, 30, 30, 0.5);
-  text-align: center;
+    background-color: rgba(30, 30, 30, 0.5);
+    text-align: center;
 }
 
 .storageDiv {
-  display: flex;
-  background-color: #EBEBEB;
-  width: 100%;
-  border-radius: 10px;
-  flex-wrap: wrap;
-  padding: 10px 20px;
-  margin-top: 10%;
+    display: flex;
+    background-color: #EBEBEB;
+    width: 100%;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    margin-top: 10%;
 }
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .displayImg {
-  object-fit: cover;
-  object-position: 50% 50%;
-  height: 200px;
-  width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    height: 200px;
+    width: 100%;
 }
 
-.row2 {
-  justify-content: space-evenly;
+.login-boxes {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.username-box {
+    width: 80%;
+    border: 2px solid grey;
+    text-align: center;
+    border-radius: 25px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.password-box {
+    width: 80%;
+    border: 2px solid grey;
+    text-align: center;
+    border-radius: 25px;
+    margin: auto;
 }
