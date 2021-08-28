@@ -36,9 +36,19 @@ const signup = () => {
       })
     })
     .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ..
+      console.error(error);
+    });
+};
+
+const login = () => {
+  const email = $("#login-email").val();
+  const password = $("#login-password").val();
+
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((usr) => {
+      window.location.href = "mainpage.html";
+    })
+    .catch((error) => {
       console.error(error);
     });
 };
