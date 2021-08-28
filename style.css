@@ -129,6 +129,10 @@ img {
 .login-boxes {
     display: flex;
     align-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
     flex-wrap: wrap;
 }
 
