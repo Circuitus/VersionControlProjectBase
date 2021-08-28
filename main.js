@@ -5,25 +5,27 @@ firebase.initializeApp({
 });
 
 const db = firebase.firestore();
-
-// firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-//   .then(() => {
-//     // Existing and future Auth states are now persisted in the current
-//     // session only. Closing the window would clear any existing state even
-//     // if a user forgets to sign out.
-//     // ...
-//     // New sign-in will be persisted with session persistence.
-//     return firebase.auth().signInWithEmailAndPassword(email, password);
-//   })
-//   .catch((error) => {
-//     // Handle Errors here.
-//     var errorCode = error.code;
-//     var errorMessage = error.message;
-//   });
   
 firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    console.log(user);
+  if (user) { 
+    // console.log(e);
+    // window.location.href = "mainpage.html";
+    // On mainpage, user is logged in.
+
+    console.log(user.uid);
+
+    db.collection("users")
+      .doc(user.uid)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          console.log("Document data:", doc.data());
+        } else {
+          console.log("No such document!")
+        }
+      });
+
+    // $("#project-list").appendChild();
   } else {
     console.log(window.location);
     // check window.location !== login / signup first.
@@ -45,8 +47,6 @@ ready(() => {
 });
 
 /*
-  If the user is on mainpage & they arent logged in, or there session has expired -> Redirect
-
   Input form validation, to ensure we dont send any invalid information to firebase, and alert the user accordingly.
 */
 
@@ -57,17 +57,17 @@ const signup = () => {
 
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((usr) => {
-      return usr.user.updateProfile({
-        displayName: username
-      })
-
-      db.collection("users").add({
+      db.collection("users").doc(usr.user.uid).set({
         username: username,
         email: email,
-        files: []
+        projects: []
       }).then(e => {
-        console.log(e);
         window.location.href = "mainpage.html";
+        console.log(e);
+      })
+
+      return usr.user.updateProfile({
+        displayName: username
       })
     })
     .catch((error) => {
