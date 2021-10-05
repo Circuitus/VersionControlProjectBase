@@ -23,49 +23,79 @@
     <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="index.html"><img class="logo" src="Images/PBlogo1stversion.png"></a>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-            <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-navigation">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="ollie.html">Link 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="bailey.html">link 2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" onclick="logout()">Sign Out</a>
-                </li>
-            </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="ollie.html">Link 1</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="bailey.html">link 2</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" onclick="logout()">Sign Out</a>
+            </li>
+          </ul>
         </div>
     </nav>
 
     <div class="main-box">
         <table id="project-list">
             <tr>
-                <div class="table-heading">Your Projects:</div>
+              <div class="table-heading">Your Projects:</div>
             </tr>
 
             <tr>
-                <div class="table-row">
-                    <div class="file-image"></div>
-                    <div class="file-name"></div>
-                    <div class="file-description"></div>
+              <div class="table-row">
+                <div class="file-image"></div>
+                <div class="file-name"></div>
+                <div class="file-description"></div>
+              </div>
+            </tr>
+
+            <tr>
+              <div class="table-row">
+                <button id="plus-button" class="btn" onclick="openModal()">
+                    <p id="plus">+</p>
+                </button>
+                
+                <div id="addRowModal" class="modal">
+                  <div class="modal-content">
+                    <div>
+                      <h2>Create New Project:</h2>
+                      <span class="close" onclick="closeModal()">&times;</span>
+                    </div>
+
+                    <div>
+                      <div>
+                        <p>Project Name</p>
+                        <input type="text" id="projectName" placeholder="Project Name">
+                      </div>
+                      
+                      <div>
+                        <p>Project Description</p>
+                        <input type="text" id="projectDesc" placeholder="Project Description">
+                      </div>
+
+                      <div>
+                        <p>Files:</p>
+                      </div>
+                      
+                      <div>
+                        <button onclick="createProject()">
+                          Create
+                        </button>
+                      </div>
+                      
+                    </div>
+                  </div>
                 </div>
-            </tr>
-            <tr>
-                <div class="table-row">Hello</div>
-            </tr>
-            <tr>
-                <div class="table-row">Hello</div>
-            </tr>
-            <tr>
-                <div class="table-row">Hello</div>
-            </tr>
-            <tr>
-                <div class="table-row">Hello</div>
+              </div>
             </tr>
         </table>
     </div>
-
-</body></html>
+  </body>
+</html>
