@@ -19,8 +19,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
-<!-- loads all of the projects for the user -->
+<body onload="loadProjects()">
 
     <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="index.html"><img class="logo" src="Images/PBlogo1stversion.png"></a>
@@ -34,7 +33,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="bailey.html">link 2</a>
+              <a class="nav-link" href="mainpage.html">Mainpage</a>
             </li>
 
             <li class="nav-item">
@@ -45,55 +44,18 @@
     </nav>
 
     <div class="main-box">
-        <div class="projectListHeader">
-          <div class="table-heading">Your Projects:</div>
-
-          <button id="plus-button" class="btn" onclick="openModal()">
-              <p id="plus">+</p>
-          </button>
+        <div>
+          <h1 class="table-heading" id="project-name">...</h1>
+          <p id="project-desc"></p>
         </div>
 
-        <table id="project-list">
-            <!-- <tr>
-              <div class="table-row">
-                <div class="file-image"></div>
-                <div class="file-name"></div>
-                <div class="file-description"></div>
-              </div>
-            </tr> -->
-        </table>
+        <div id="files-list"></div>
 
-        <div id="addRowModal" class="modal">
-          <div class="modal-content">
-            <div>
-              <h2>Create New Project:</h2>
-              <span class="close" onclick="closeModal()">&times;</span>
-            </div>
-
-            <div>
-              <div>
-                <p>Project Name</p>
-                <input type="text" id="projectName" placeholder="Project Name">
-              </div>
-              
-              <div>
-                <p>Project Description</p>
-                <input type="text" id="projectDesc" placeholder="Project Description">
-              </div>
-
-              <!-- <div>
-                <p>Files:</p>
-              </div> -->
-              
-              <div>
-                <button onclick="createProject()">
-                  Create
-                </button>
-              </div>
-              
-            </div>
-          </div>
+        <div id="files-drop" onclick="filePicker()" ondrop="dropFile()">
+          <p>Upload Files to Begin</p>
         </div>
+
+        <input type="file" id="files-input" oninput="uploadFile()">
     </div>
   </body>
 </html>
