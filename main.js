@@ -178,7 +178,6 @@ const createProject = () => {
 const openModal = () => {
   //gets the modal
   const modal = document.getElementById("addRowModal")
-
   console.log(modal);
   //logging for testing purposes
   modal.style.display = "flex";
@@ -255,7 +254,7 @@ const renderProjectList = () => {
               child.appendChild(desc);
             
             //will display version number
-            const version = document.createElement("p");
+            const version = document.createElement("p1");
               version.innerHTML = data.version;
               child.appendChild(version);
 

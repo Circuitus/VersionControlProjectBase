@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Compiled Website</title>
+    <title>Project Base</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,7 +23,7 @@
 <!-- loads all of the projects for the user -->
 
     <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="mainpage.html"><img class="logo" src="Images/PBlogo1stversion.png"></a>
+        <a class="navbar-brand" href="mainpage.html"><img class="logo" src="Images/PBlogo1stversion.png" alt="Home"></a>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,7 +45,16 @@
           </button>
         </div>
 
+        <table>
+         <div class="rowElement" id="project-headers">
+           <h4>Name</h4>
+           <h4>Description</h4>
+           <h4 id="id-tag">ID</h4>
+         </div>
+        </table>
+
         <table id="project-list">
+          
             <!-- <tr>
               <div class="table-row">
                 <div class="file-image"></div>
@@ -61,28 +70,23 @@
               <h2>Create New Project:</h2>
               <span class="close" onclick="closeModal()">&times;</span>
             </div>
-
             <div>
               <div>
                 <p>Project Name</p>
                 <input type="text" id="projectName" placeholder="Project Name">
               </div>
-              
               <div>
                 <p>Project Description</p>
                 <input type="text" id="projectDesc" placeholder="Project Description">
               </div>
-
               <!-- <div>
                 <p>Files:</p>
               </div> -->
-              
               <div>
                 <button onclick="createProject()">
                   Create
                 </button>
               </div>
-              
             </div>
           </div>
         </div>
